@@ -1,19 +1,19 @@
 'use strict';
 
-let num1 = 100;
-let num2 = 5;
+let a = 100;
+let b = 5;
 
-let sum = num1 + num2;
+let sum = a + b;
 console.log(`sum: ${sum}`);
 
-let subtraction = num1 - num2;
+let subtraction = a - b;
 console.log(`subtraction: ${subtraction}`);
 
-let multiplication = num1 * num2;
+let multiplication = a * b;
 console.log(`multiplication: ${multiplication}`);
 
-let division = num1 / num2;
+let division = a / b;
 console.log(`division: ${division}`);
 
-let exponentiation = num1 ** num2;
+let exponentiation = a ** b;
 console.log(`exponentiation: ${exponentiation}`);
