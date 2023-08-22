@@ -1,6 +1,7 @@
 'use strict';
 
 //Homework 3
+
 //Even number output
 const value = prompt('Enter a number');
 
@@ -13,6 +14,13 @@ if(isNaN(value)) {
         }
     }
 }
+
+//Number reversal
+const currentMaxValue = 4589;
+let reverseMaxValue = +currentMaxValue.toString().split("").reverse().join("");
+
+console.log(reverseMaxValue);
+console.log(typeof reverseMaxValue);
 
 
 /*Homework 2
