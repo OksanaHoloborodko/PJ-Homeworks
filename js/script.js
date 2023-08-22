@@ -1,6 +1,21 @@
 'use strict';
 
-//Homework 2
+//Homework 3
+//Even number output
+const value = prompt('Enter a number');
+
+if(isNaN(value)) {
+    console.log('Error, it\'s not a number');
+} else {
+    for(let i = 0; i < value; i++) {
+        if(i % 2 == 0) {
+            console.log(i);
+        }
+    }
+}
+
+
+/*Homework 2
 
 //Password checker
 let password = prompt('Enter your password');
@@ -22,7 +37,7 @@ let calculatedCost = (numOfLiters * costPerLiter).toFixed(2);
 console.log(`You have to pay ${calculatedCost}`);
 
 
-/*Homework 1
+Homework 1
 let a = 100;
 let b = 5;
 
