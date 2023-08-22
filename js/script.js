@@ -22,6 +22,17 @@ let reverseMaxValue = +currentMaxValue.toString().split("").reverse().join("");
 console.log(reverseMaxValue);
 console.log(typeof reverseMaxValue);
 
+//Finding the product of an array
+const resultsArray = [1, 2, [3, [4]]];
+const modifiedArray = resultsArray.flat(Infinity);
+let productOfArray = 1;
+
+for(let i = 0; i < modifiedArray.length; i++) {
+    productOfArray *= modifiedArray[i];
+}
+
+console.log(productOfArray);
+
 
 /*Homework 2
 
