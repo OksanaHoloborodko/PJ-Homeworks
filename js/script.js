@@ -1,7 +1,23 @@
 'use strict';
 
-//Homework 3
+//Homework 4
 
+const priceData = {
+  Apples: '23.4',
+  BANANAS: '48',
+  oRAngGEs: '48.7584',
+};
+
+let updatedPriceData = {};
+
+for (let key in priceData) {
+    updatedPriceData[key.toLowerCase()] = parseFloat(priceData[key]).toFixed(2);
+}
+
+console.log(updatedPriceData);
+
+
+/*Homework 3
 //Even number output
 const value = prompt('Enter a number');
 
@@ -34,7 +50,7 @@ for(let i = 0; i < modifiedArray.length; i++) {
 console.log(productOfArray);
 
 
-/*Homework 2
+Homework 2
 
 //Password checker
 let password = prompt('Enter your password');
