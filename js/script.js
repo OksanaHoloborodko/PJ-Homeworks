@@ -2,6 +2,25 @@
 
 //Homework 4
 
+//Variant 2
+const priceData = {
+  Apples: '23.4',
+  BANANAS: '48',
+  oRAngGEs: '48.7584',
+};
+
+let updatedPriceData = {};
+let entries = Object.entries(priceData);
+
+for (let key of entries) {
+    key[0] = key[0].toLowerCase();
+    key[1] = parseFloat(key[1]).toFixed(2);
+}
+
+updatedPriceData = Object.fromEntries(entries);
+console.log(updatedPriceData);
+
+/*Variant 1
 const priceData = {
   Apples: '23.4',
   BANANAS: '48',
@@ -17,7 +36,7 @@ for (let key in priceData) {
 console.log(updatedPriceData);
 
 
-/*Homework 3
+//Homework 3
 //Even number output
 const value = prompt('Enter a number');
 
