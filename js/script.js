@@ -1,7 +1,27 @@
 'use strict';
 
-//Homework 4
+//Homework 5
 
+//Iterative Odd Sum
+function iterativeOddSumTo(number) {
+    let sum = 0;
+    for(let i = number; i > 0; i--) {
+        sum += (i % 2 === 0) ? 0 : i;
+    }
+    return sum;
+}
+
+//Recursive Odd Sum
+function recursiveOddSumTo(number) {
+    if (number === 0) {
+        return 0;
+    }
+
+    return (number % 2 === 0) ? recursiveOddSumTo(number - 1) : number + recursiveOddSumTo(number - 1);
+}
+
+
+/*Homework 4
 //Variant 2
 const priceData = {
   Apples: '23.4',
@@ -20,7 +40,7 @@ for (let key of entries) {
 updatedPriceData = Object.fromEntries(entries);
 console.log(updatedPriceData);
 
-/*Variant 1
+//Variant 1
 const priceData = {
   Apples: '23.4',
   BANANAS: '48',
