@@ -15,11 +15,11 @@ function iterativeOddSumTo(number) {
 
 //Recursive Odd Sum
 function recursiveOddSumTo(number) {
-    if (number === 0) {
-        return 0;
+    if (number === 1) {
+        return 1;
     }
 
-    return (number % 2 === 0) ? recursiveOddSumTo(number - 1) : number + recursiveOddSumTo(number - 1);
+    return (number % 2 === 0) ? recursiveOddSumTo(number - 1) : number + recursiveOddSumTo(number - 2);
 }
 
 
