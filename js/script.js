@@ -7,6 +7,26 @@ let initials = userNames.map((userName) => userName.split(' ').map((initial) => 
 
 console.log(initials);
 
+//Task 2
+//Variant 1
+const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+const vowels = ['а', 'о', 'у', 'и', 'і', 'е', 'ю', 'я'];
+let filteredNames = [];
+userNames.forEach((userName) => {
+    if(vowels.indexOf(userName.toLowerCase()[0]) !== -1) {
+        filteredNames.push(userName);
+    }
+});
+
+console.log(filteredNames);
+
+//Variant 2
+const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+const vowels = ['а', 'о', 'у', 'и', 'і', 'е', 'ю', 'я'];
+let filteredNames = userNames.filter((userName) => vowels.indexOf(userName.toLowerCase()[0]) !== -1);
+
+console.log(filteredNames);
+
 
 
 /*Homework 5
