@@ -27,7 +27,11 @@ let filteredNames = userNames.filter((userName) => vowels.indexOf(userName.toLow
 
 console.log(filteredNames);
 
+//Task 3
+const resultsArray = [1, 2, [3, [4]]];
+let productOfArray = resultsArray.flat(Infinity).reduce((acc, currentValue) => acc * currentValue, 1);
 
+console.log(productOfArray);
 
 /*Homework 5
 
