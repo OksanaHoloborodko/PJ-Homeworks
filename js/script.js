@@ -1,6 +1,15 @@
 'use strict';
 
-//Homework 5
+//Homework 6
+//Task 1
+const userNames = ["Петрик Ольга Іванівна", "Гнатюк Петро Антонович", "Рудко Андрій Опанасович"];
+let initials = userNames.map((userName) => userName.split(' ').map((initial) => initial[0]).join('.')).sort();
+
+console.log(initials);
+
+
+
+/*Homework 5
 
 //Iterative Odd Sum
 function iterativeOddSumTo(number) {
@@ -23,7 +32,7 @@ function recursiveOddSumTo(number) {
 }
 
 
-/*Homework 4
+//Homework 4
 //Variant 2
 const priceData = {
   Apples: '23.4',
