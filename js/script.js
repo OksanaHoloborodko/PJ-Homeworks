@@ -53,7 +53,7 @@ let updatedPriceData = optimizer(priceData);
 console.log(updatedPriceData);
 
 //Task 5
-function durationBetweenDates(firstDate, lastDate, dimension) {
+function durationBetweenDates(firstDate = '05 Sep 2023', lastDate = '06 Sep 2023', dimension = 'seconds') {
     const firstDateTimestamp = new Date(firstDate).getTime();
     const lastDateTimestamp = new Date(lastDate).getTime();
 
