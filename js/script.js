@@ -52,6 +52,29 @@ let updatedPriceData = optimizer(priceData);
 
 console.log(updatedPriceData);
 
+//Task 5
+function durationBetweenDates(firstDate, lastDate, dimension) {
+    const firstDateTimestamp = new Date(firstDate).getTime();
+    const lastDateTimestamp = new Date(lastDate).getTime();
+
+    let duration = Math.abs(lastDateTimestamp - firstDateTimestamp);
+    
+    switch (dimension) {
+        case 'days':
+            return `${duration / 86400000} days`;
+        break;
+        case 'hours':
+            return `${duration / 3600000} hours`;
+        break;
+        case 'minutes':
+            return `${duration / 60000} minutes`;
+        break;
+        case 'seconds':
+            return `${duration / 1000} seconds`;
+        break;
+    }
+}
+
 /*Homework 5
 
 //Iterative Odd Sum
