@@ -33,6 +33,25 @@ let productOfArray = resultsArray.flat(Infinity).reduce((acc, currentValue) => a
 
 console.log(productOfArray);
 
+//Task 4
+const priceData = {
+Apples: '23.4',
+BANANAS: '48',
+oRAngGEs: '48.7584',
+};
+
+function optimizer(data) {
+    return Object.fromEntries(Object.entries(data).map((el) => {
+        el[0] = el[0].toLowerCase();
+        el[1] = parseFloat(el[1]).toFixed(2);
+        return el;
+    }));
+}
+
+let updatedPriceData = optimizer(priceData);
+
+console.log(updatedPriceData);
+
 /*Homework 5
 
 //Iterative Odd Sum
