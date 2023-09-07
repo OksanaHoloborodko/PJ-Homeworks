@@ -13,7 +13,7 @@ const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Март
 const vowels = ['а', 'о', 'у', 'и', 'і', 'е', 'ю', 'я'];
 let filteredNames = [];
 userNames.forEach((userName) => {
-    if(vowels.indexOf(userName.toLowerCase()[0]) !== -1) {
+    if(vowels.includes(userName.toLowerCase()[0])) {
         filteredNames.push(userName);
     }
 });
@@ -23,7 +23,7 @@ console.log(filteredNames);
 //Variant 2
 const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
 const vowels = ['а', 'о', 'у', 'и', 'і', 'е', 'ю', 'я'];
-let filteredNames = userNames.filter((userName) => vowels.indexOf(userName.toLowerCase()[0]) !== -1);
+let filteredNames = userNames.filter((userName) => vowels.includes(userName.toLowerCase()[0]));
 
 console.log(filteredNames);
 
@@ -41,11 +41,7 @@ oRAngGEs: '48.7584',
 };
 
 function optimizer(data) {
-    return Object.fromEntries(Object.entries(data).map((el) => {
-        el[0] = el[0].toLowerCase();
-        el[1] = parseFloat(el[1]).toFixed(2);
-        return el;
-    }));
+    return Object.fromEntries(Object.entries(data).map((el) => [el[0].toLowerCase(), parseFloat(el[1]).toFixed(2)]));
 }
 
 let updatedPriceData = optimizer(priceData);
@@ -53,27 +49,33 @@ let updatedPriceData = optimizer(priceData);
 console.log(updatedPriceData);
 
 //Task 5
-function durationBetweenDates(firstDate = '05 Sep 2023', lastDate = '06 Sep 2023', dimension = 'seconds') {
-    const firstDateTimestamp = new Date(firstDate).getTime();
-    const lastDateTimestamp = new Date(lastDate).getTime();
+function durationBetweenDates(startDate = '05 Sep 2023', endDate = '06 Sep 2023', dimension = 'seconds') {
+    const startDateTimestamp = new Date(startDate).getTime();
+    const endDateTimestamp = new Date(endDate).getTime();
 
-    let duration = Math.abs(lastDateTimestamp - firstDateTimestamp);
+    const duration = Math.abs(endDateTimestamp - startDateTimestamp);
+
+    const DAY_IN_MILLISECONDS = 86400000;
+    const HOUR_IN_MILLISECONDS = 3600000;
+    const MINUTE_IN_MILLISECONDS = 60000;
+    const SECOND_IN_MILLISECONDS = 1000;
     
     switch (dimension) {
         case 'days':
-            return `${duration / 86400000} days`;
+            return `${duration / DAY_IN_MILLISECONDS} ${dimension}`;
         break;
         case 'hours':
-            return `${duration / 3600000} hours`;
+            return `${duration / HOUR_IN_MILLISECONDS} ${dimension}`;
         break;
         case 'minutes':
-            return `${duration / 60000} minutes`;
+            return `${duration / MINUTE_IN_MILLISECONDS} ${dimension}`;
         break;
         case 'seconds':
-            return `${duration / 1000} seconds`;
+            return `${duration / SECOND_IN_MILLISECONDS} ${dimension}`;
         break;
     }
 }
+
 
 /*Homework 5
 
