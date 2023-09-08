@@ -60,20 +60,24 @@ function durationBetweenDates(startDate = '05 Sep 2023', endDate = '06 Sep 2023'
     const MINUTE_IN_MILLISECONDS = 60000;
     const SECOND_IN_MILLISECONDS = 1000;
     
+let result;
+    
     switch (dimension) {
         case 'days':
-            return `${duration / DAY_IN_MILLISECONDS} ${dimension}`;
+            result = duration / DAY_IN_MILLISECONDS;
         break;
         case 'hours':
-            return `${duration / HOUR_IN_MILLISECONDS} ${dimension}`;
+            result = duration / HOUR_IN_MILLISECONDS;
         break;
         case 'minutes':
-            return `${duration / MINUTE_IN_MILLISECONDS} ${dimension}`;
+            result = duration / MINUTE_IN_MILLISECONDS;
         break;
         case 'seconds':
-            return `${duration / SECOND_IN_MILLISECONDS} ${dimension}`;
+            result = duration / SECOND_IN_MILLISECONDS;
         break;
-    }
+     }
+
+     return `${result} {dimension}`;
 }
 
 
