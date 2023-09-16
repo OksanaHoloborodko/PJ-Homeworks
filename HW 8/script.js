@@ -30,3 +30,19 @@ function detonatorTimer(delay) {
         }
     }, 1000);
 }
+
+//Task 3
+let phone = {
+    brand: 'iphone',
+    model: 14,
+    color: 'deep purple',
+    memory: '512 GB',
+    year: 2022,
+    price: 1000,
+    description() {
+        console.log(`Introducing the ${this.brand} ${this.model} in a stunning ${this.color} hue. This sleek and powerful device boasts an impressive ${this.memory} of memory, ensuring you have ample space for all your apps, photos, and videos. `);
+    },
+    forecast() {
+        console.log(`The new model will cost ${this.price * 1.2} and will be released in ${this.year + 1}.`);
+    }
+}
