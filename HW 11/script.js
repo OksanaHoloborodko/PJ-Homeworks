@@ -4,16 +4,9 @@ let textElement = document.getElementById('headerTwo');
 
 let firstSection = document.getElementsByTagName('section')[0];
 
-let listItems = document.querySelectorAll('li')
-let listItem = null;
+let listItem = document.querySelector('li:nth-child(5)');
 
-for (let i = 0; i < listItems.length; i++) {
-  if (listItems[i].textContent === 'Пункт 5') {
-    listItem = listItems[i];
-  }
-}
-
-let divWithClass = document.querySelector('.hatredLevelBlock');
+let divWithClass = document.getElementsByClassName('hatredLevelBlock');
 
 console.log(textElement);
 console.log(firstSection);
