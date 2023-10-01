@@ -11,9 +11,10 @@ function getConfig() {
     let date = null;
 
     if (config) {
-        theme = JSON.parse(config).theme;
-        date = JSON.parse(config).date;
-        text.textContent = date;
+        const parsedConfig = JSON.parse(config);
+        theme = parsedConfig.theme;
+        date = parsedConfig.date;
+        text.textContent = theme == 'light' ? `Last turn off: ${date}`: `Last turn on: ${date}`;
     }
 
     if (theme == 'dark') {
@@ -28,26 +29,32 @@ function normalizeDate(num) {
     return num < 10 ? `0${num}` : `${num}`;
 }
 
+function formatDate(date) {
+    const year = date.getFullYear();
+    const month = normalizeDate(date.getMonth() + 1);
+    const day = normalizeDate(date.getDate());
+    const hour = normalizeDate(date.getHours());
+    const minutes = normalizeDate(date.getMinutes());
+    const seconds = normalizeDate(date.getSeconds());
+    
+    return `${day}-${month}-${year} ${hour}:${minutes}:${seconds}`;
+}
+
 button.addEventListener('click', () => {
     const clickTime = new Date();
-    const year = clickTime.getFullYear();
-    const month = normalizeDate(clickTime.getMonth() + 1);
-    const day = normalizeDate(clickTime.getDate());
-    const hour = normalizeDate(clickTime.getHours());
-    const minutes = normalizeDate(clickTime.getMinutes());
-    const seconds = normalizeDate(clickTime.getSeconds());
+    const formattedDate = formatDate(clickTime);
 
     body.classList.toggle('dark');
     
     if(theme == 'light') {
         button.textContent = 'Turn on';
-        text.textContent = `Last turn off: ${day}-${month}-${year} ${hour}:${minutes}:${seconds}`;
+        text.textContent = `Last turn off: ${formattedDate}`;
         theme = 'dark';
     } else {
         button.textContent = 'Turn off';
-        text.textContent = `Last turn on: ${day}-${month}-${year} ${hour}:${minutes}:${seconds}`;
+        text.textContent = `Last turn on: ${formattedDate}`;
         theme = 'light';
     }
 
-    localStorage.setItem('theme', JSON.stringify({theme: theme, date: text.textContent}));
+    localStorage.setItem('theme', JSON.stringify({theme, date: formattedDate}));
 });
