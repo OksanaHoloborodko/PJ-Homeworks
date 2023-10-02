@@ -41,8 +41,7 @@ function formatDate(date) {
 }
 
 button.addEventListener('click', () => {
-    const clickTime = new Date();
-    const formattedDate = formatDate(clickTime);
+    const formattedDate = formatDate(new Date());
 
     body.classList.toggle('dark');
     
